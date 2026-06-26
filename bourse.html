@@ -35,7 +35,7 @@ body{
 
 /* nav top */
 .topnav{position:sticky;top:0;z-index:30;background:linear-gradient(var(--bg) 78%,rgba(19,24,26,0));
-  padding:14px 16px 8px;margin-bottom:2px}
+  padding:14px 16px 8px}
 .topnav .inner{max-width:580px;margin:0 auto;display:flex;gap:6px;background:var(--bg2);
   padding:5px;border-radius:12px;border:1px solid var(--line)}
 .navbtn{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:600;font-size:13px;
@@ -61,59 +61,84 @@ h1 .l2{display:block;color:var(--money)}
 .rules ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .rules li{font-size:13px;color:var(--muted);display:flex;gap:9px;align-items:flex-start}
 .rules li b{color:var(--bone);font-weight:600}
-.rules .ic{color:var(--money);flex-shrink:0;font-weight:700;margin-top:1px}
+.rules .ic{color:var(--money);flex-shrink:0;font-weight:700;margin-top:1px;font-family:'JetBrains Mono',monospace}
 
 /* legend marchés */
 .legend{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .lg{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
-.lg .name{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;margin-bottom:4px}
-.lg.lcn .name{color:var(--money)} .lg.baw .name{color:var(--amber)}
+.lg .name{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.lg .dot{width:9px;height:9px;border-radius:50%}
+.lg.lcn .name{color:var(--money)} .lg.lcn .dot{background:var(--money)}
+.lg.baw .name{color:var(--amber)} .lg.baw .dot{background:var(--amber)}
 .lg p{font-size:11.5px;color:var(--muted)}
 
-main{padding:10px 0 40px}
-.sec-head{display:flex;align-items:baseline;gap:10px;margin:26px 2px 12px}
-.sec-head h2{font-family:'Anton',sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;
-  text-transform:uppercase;color:var(--bone)}
-.sec-head .rule{flex:1;height:1px;background:var(--line)}
+/* recap rapide */
+.recap{margin-top:24px}
+.recap h2,.plan h2{font-family:'Anton',sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;
+  text-transform:uppercase;color:var(--bone);margin-bottom:4px}
+.recap .hint,.plan .hint{font-size:12px;color:var(--muted2);margin-bottom:12px}
+.rrow{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:11px 13px;margin-bottom:8px}
+.rrow.jackpot{border-color:rgba(84,189,128,.5)}
+.rrow .rn{font-family:'Anton',sans-serif;font-size:18px;color:var(--muted2);min-width:24px}
+.rrow.jackpot .rn{color:var(--money)}
+.rcore{flex:1;min-width:0}
+.rname{font-weight:700;font-size:13.5px;color:var(--bone);margin-bottom:5px}
+.rflow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+.tk{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11.5px;padding:2px 7px;border-radius:5px;
+  background:var(--surface2);color:var(--bone)}
+.tk.lcn{box-shadow:inset 0 0 0 1px rgba(84,189,128,.45)}
+.tk.baw{box-shadow:inset 0 0 0 1px rgba(240,164,55,.45)}
+.arr{color:var(--muted2);font-size:12px}
+.rmax{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;color:var(--money);flex-shrink:0;text-align:right}
+.rmax.big{font-size:18px}
+.rmax .s{display:block;font-family:'Archivo';font-weight:600;font-size:9px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--muted2)}
 
-/* carte mission */
+/* plan détaillé — steppers */
+.plan{margin-top:30px}
 .mission{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:15px 16px;margin-bottom:12px;position:relative;overflow:hidden}
+  padding:16px 16px 8px;margin-bottom:14px;position:relative;overflow:hidden}
 .mission::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--amber)}
 .mission.mandatory::before{background:var(--gold)}
 .mission.jackpot::before{background:var(--money)}
 .m-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:4px}
 .m-num{font-family:'Anton',sans-serif;font-size:13px;color:var(--muted2);letter-spacing:.05em}
-.m-name{font-family:'Anton',sans-serif;font-weight:400;font-size:21px;letter-spacing:.02em;color:var(--bone);line-height:1.05}
+.m-name{font-family:'Anton',sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;color:var(--bone);line-height:1.05}
 .m-badges{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
 .bdg{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px;white-space:nowrap}
 .bdg-mand{background:rgba(242,193,78,.14);color:var(--gold)}
 .bdg-jack{background:rgba(84,189,128,.16);color:var(--money)}
 .bdg-char{background:rgba(111,166,230,.15);color:var(--cross)}
-.m-sub{font-size:12.5px;color:var(--muted);margin:6px 0 14px}
+.m-sub{font-size:12.5px;color:var(--muted);margin:6px 0 6px}
 
-/* steps achat/vente */
-.steps{display:flex;flex-direction:column;gap:10px}
-.step{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:12px 13px}
-.step.sell{border-style:dashed}
-.s-head{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex-wrap:wrap}
-.when{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px}
-.when.before{background:rgba(240,164,55,.16);color:var(--amber)}
-.when.after{background:rgba(84,189,128,.16);color:var(--money)}
-.action{font-weight:700;font-size:13px;color:var(--bone)}
-.ticker{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;letter-spacing:.06em;
-  background:var(--surface2);padding:4px 10px;border-radius:7px;color:var(--bone)}
-.mkt{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px}
+/* flow stepper */
+.flow{list-style:none;position:relative;margin:12px 0 6px;padding-left:8px}
+.flow::before{content:"";position:absolute;left:21px;top:14px;bottom:14px;width:2px;background:var(--line)}
+.fstep{display:flex;gap:13px;align-items:flex-start;padding:7px 0;position:relative}
+.fdot{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;z-index:1;border:2px solid var(--line);
+  background:var(--bg2);color:var(--muted)}
+.fstep.buy .fdot{border-color:var(--money);color:var(--money);background:rgba(84,189,128,.10)}
+.fstep.sell .fdot{border-color:var(--amber);color:var(--amber);background:rgba(240,164,55,.10)}
+.fstep.act .fdot{border-color:var(--cross);color:var(--cross);background:rgba(111,166,230,.10)}
+.fbody{flex:1;min-width:0;padding-top:2px}
+.fline{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.verb{font-weight:700;font-size:13.5px;letter-spacing:.02em}
+.fstep.buy .verb{color:var(--money)}
+.fstep.sell .verb{color:var(--amber)}
+.fstep.act .verb{color:var(--bone)}
+.bigtk{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;padding:3px 10px;border-radius:7px;
+  background:var(--surface2);color:var(--bone)}
+.mkt{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px}
 .mkt.lcn{background:rgba(84,189,128,.12);color:var(--money)}
 .mkt.baw{background:rgba(240,164,55,.12);color:var(--amber)}
-.s-body{font-size:12.5px;color:var(--muted)}
-.target{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-family:'JetBrains Mono',monospace;
-  font-weight:700;font-size:14px;color:var(--money)}
-.target.big{font-size:17px;color:var(--money)}
-.target .lbl{font-family:'Archivo';font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2)}
-
-.note{font-size:12px;color:var(--muted);margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
-.note b{color:var(--bone)}
+.gain{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:var(--money)}
+.gain.huge{font-size:20px}
+.fdesc{font-size:12px;color:var(--muted);margin-top:3px}
+.fdesc b{color:var(--bone)}
+.m-foot{font-size:12px;color:var(--muted);margin:8px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
+.m-foot b{color:var(--money);font-family:'JetBrains Mono',monospace}
 
 /* total */
 .bigtotal{margin-top:24px;text-align:center;background:var(--bg2);border:1px solid var(--line);
@@ -125,7 +150,6 @@ main{padding:10px 0 40px}
 footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 36px;color:var(--muted2);font-size:12px}
 footer b{color:var(--muted)}
 footer .sig{margin-top:10px;color:var(--amber-dim);font-family:'JetBrains Mono',monospace;font-size:11px}
-a.inl{color:var(--money);text-decoration:none;border-bottom:1px solid rgba(84,189,128,.35)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -141,172 +165,215 @@ a.inl{color:var(--money);text-decoration:none;border-bottom:1px solid rgba(84,18
 
 <div class="wrap">
   <header class="hero">
-    <div class="eyebrow">GTA V · Mode histoire · Marché LCN / BAWSAQ</div>
+    <div class="eyebrow">GTA V · Mode histoire · Devenir milliardaire</div>
     <h1>Bourse de<span class="l2">Los Santos</span></h1>
-    <p class="lede">Le plan complet pour devenir milliardaire avec les 5 missions d'assassinat de Lester. Quoi acheter, quand, sur quel marché, et le gain visé à la revente.</p>
+    <p class="lede">Suis le plan étape par étape : achète l'action, fais la mission, revends au bon moment. Les 5 assassinats de Lester, dans l'ordre.</p>
     <div class="stats">
       <span><b>5</b> missions</span>
       <span><b>3</b> persos</span>
-      <span><b>~2 Mds$</b> / perso visés</span>
+      <span><b>~2 Mds$</b> / perso</span>
     </div>
 
     <div class="rules">
-      <h3>★ Règles d'or (à lire avant de jouer)</h3>
+      <h3>★ À faire avant de commencer</h3>
       <ul>
-        <li><span class="ic">1</span><span><b>Fais-les APRÈS le scénario</b> et surtout après le braquage <b>The Big Score</b> : chaque perso a alors ~40 M$ à investir. Investir tôt = gains ridicules.</span></li>
-        <li><span class="ic">2</span><span><b>Les 3 persos investissent</b> sur chaque action (Michael, Franklin, Trevor). Franklin exécute les hits, mais répartis l'argent des trois.</span></li>
-        <li><span class="ic">3</span><span><b>Sauvegarde avant</b> chaque mission et chaque vente. Si le % ne monte pas assez, recharge et réessaie.</span></li>
-        <li><span class="ic">4</span><span><b>« Quand vendre » = en heures de JEU</b>, pas réelles. L'action grimpe puis plafonne sous 24–48 h in-game. Dors / change de perso pour avancer le temps, puis vends au sommet (quand le % arrête de monter).</span></li>
-        <li><span class="ic">5</span><span><b>Garde Redwood (RWC) pour la fin</b> de la mission Multi Target : c'est le plus gros multiplicateur du jeu (~×4).</span></li>
+        <li><span class="ic">1.</span><span><b>Finis l'histoire</b> + le braquage <b>The Big Score</b> d'abord. Chaque perso a alors ~40 M$ à investir. Investir trop tôt = gains minuscules.</span></li>
+        <li><span class="ic">2.</span><span><b>Investis avec les 3 persos</b> à chaque fois (Michael, Franklin, Trevor). Franklin fait les missions, mais répartis l'argent des trois sur chaque action.</span></li>
+        <li><span class="ic">3.</span><span><b>Sauvegarde avant</b> chaque mission et chaque vente. Gain insuffisant → recharge et recommence.</span></li>
+        <li><span class="ic">4.</span><span><b>« Attends » = en heures de jeu.</b> L'action grimpe puis plafonne sous 24–48 h in-game. Dors ou change de perso pour avancer le temps, puis vends quand le % arrête de monter.</span></li>
       </ul>
     </div>
 
     <div class="legend">
       <div class="lg lcn">
-        <div class="name">LCN</div>
-        <p>Marché hors-ligne, fiable. Réagit aux événements du scénario. Les actions LCN sont les plus prévisibles.</p>
+        <div class="name"><span class="dot"></span>LCN</div>
+        <p>Marché hors-ligne, fiable. Le plus prévisible.</p>
       </div>
       <div class="lg baw">
-        <div class="name">BAWSAQ</div>
-        <p>Marché en ligne (Rockstar Social Club). Influencé par les autres joueurs → plus volatil. Connexion internet requise.</p>
+        <div class="name"><span class="dot"></span>BAWSAQ</div>
+        <p>Marché en ligne (Rockstar). Plus volatil, connexion requise.</p>
       </div>
     </div>
   </header>
 
-  <main>
-    <div class="sec-head"><h2>Les 5 assassinats, dans l'ordre</h2><span class="rule"></span></div>
+  <!-- RÉCAP RAPIDE -->
+  <section class="recap">
+    <h2>Récap rapide</h2>
+    <p class="hint">Vue d'ensemble. Le détail étape par étape juste en dessous.</p>
+
+    <div class="rrow">
+      <span class="rn">01</span>
+      <div class="rcore">
+        <div class="rname">Hotel <span style="color:var(--gold);font-size:11px">· obligatoire</span></div>
+        <div class="rflow"><span class="tk baw">BET</span><span class="arr">→ vends → rachète</span><span class="tk lcn">BIL</span></div>
+      </div>
+      <div class="rmax">+80%<span class="s">max</span></div>
+    </div>
+
+    <div class="rrow jackpot">
+      <span class="rn">02</span>
+      <div class="rcore">
+        <div class="rname">Multi Target <span style="color:var(--money);font-size:11px">· 💰 jackpot</span></div>
+        <div class="rflow"><span class="tk lcn">DEB</span><span class="arr">→ vends → rachète</span><span class="tk lcn">RWC</span></div>
+      </div>
+      <div class="rmax big">+300%<span class="s">max</span></div>
+    </div>
+
+    <div class="rrow">
+      <span class="rn">03</span>
+      <div class="rcore">
+        <div class="rname">Vice</div>
+        <div class="rflow"><span class="tk baw">FRT</span><span class="arr">→ vends → rachète</span><span class="tk baw">FAC</span></div>
+      </div>
+      <div class="rmax">+50%<span class="s">max</span></div>
+    </div>
+
+    <div class="rrow">
+      <span class="rn">04</span>
+      <div class="rcore">
+        <div class="rname">Bus</div>
+        <div class="rflow"><span class="arr">achète le crash</span><span class="tk baw">VAP</span></div>
+      </div>
+      <div class="rmax">+100%<span class="s">max</span></div>
+    </div>
+
+    <div class="rrow">
+      <span class="rn">05</span>
+      <div class="rcore">
+        <div class="rname">Construction</div>
+        <div class="rflow"><span class="tk lcn">GCD</span><span class="arr">achète avant, vends après</span></div>
+      </div>
+      <div class="rmax">+90%<span class="s">max</span></div>
+    </div>
+  </section>
+
+  <!-- PLAN DÉTAILLÉ -->
+  <section class="plan">
+    <h2 style="margin-top:30px">Le plan, étape par étape</h2>
+    <p class="hint">Fais les étapes dans l'ordre, de haut en bas.</p>
 
     <!-- 1 HOTEL -->
     <article class="mission mandatory">
       <div class="m-top">
-        <div>
-          <div class="m-num">01</div>
-          <div class="m-name">The Hotel Assassination</div>
-        </div>
-        <div class="m-badges">
-          <span class="bdg bdg-mand">Obligatoire</span>
-          <span class="bdg bdg-char">Franklin</span>
-        </div>
+        <div><div class="m-num">MISSION 01</div><div class="m-name">The Hotel Assassination</div></div>
+        <div class="m-badges"><span class="bdg bdg-mand">Obligatoire</span></div>
       </div>
-      <p class="m-sub">Mission imposée par le scénario (tu l'as tôt). Petit capital → petits gains, mais c'est l'échauffement.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="s-head"><span class="when before">Avant</span><span class="action">Acheter</span><span class="ticker">BET</span><span class="mkt baw">BAWSAQ</span></div>
-          <div class="s-body">Betta Pharmaceuticals. La cible nuit à son concurrent → BET monte après le hit.</div>
-          <div class="target"><span class="lbl">Vendre à</span> +80 %</div>
-        </div>
-        <div class="step sell">
-          <div class="s-head"><span class="when after">Après</span><span class="action">Acheter</span><span class="ticker">BIL</span><span class="mkt lcn">LCN</span></div>
-          <div class="s-body">Bilkinton Research chute juste après l'assassinat. Achète au plus bas, attends le rebond.</div>
-          <div class="target"><span class="lbl">Revendre à</span> +80 %</div>
-        </div>
-      </div>
+      <p class="m-sub">Imposée par le scénario, tu l'as tôt. Petit capital → l'échauffement.</p>
+      <ol class="flow">
+        <li class="fstep buy"><div class="fdot">1</div><div class="fbody">
+          <div class="fline"><span class="verb">Achète</span><span class="bigtk">BET</span><span class="mkt baw">BAWSAQ</span></div>
+          <div class="fdesc">Betta Pharmaceuticals, <b>avant</b> de lancer la mission.</div></div></li>
+        <li class="fstep act"><div class="fdot">🎯</div><div class="fbody">
+          <div class="fline"><span class="verb">Fais la mission</span></div></div></li>
+        <li class="fstep sell"><div class="fdot">2</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">BET</span><span class="gain">+80%</span></div>
+          <div class="fdesc">Attends qu'elle plafonne (~1 jour in-game), puis revends.</div></div></li>
+        <li class="fstep buy"><div class="fdot">3</div><div class="fbody">
+          <div class="fline"><span class="verb">Rachète</span><span class="bigtk">BIL</span><span class="mkt lcn">LCN</span></div>
+          <div class="fdesc">Bilkinton a chuté après le hit. Achète <b>au plus bas</b>.</div></div></li>
+        <li class="fstep sell"><div class="fdot">4</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">BIL</span><span class="gain">+80%</span></div>
+          <div class="fdesc">Au rebond.</div></div></li>
+      </ol>
     </article>
 
     <!-- 2 MULTI TARGET -->
     <article class="mission jackpot">
       <div class="m-top">
-        <div>
-          <div class="m-num">02</div>
-          <div class="m-name">The Multi Target Assassination</div>
-        </div>
-        <div class="m-badges">
-          <span class="bdg bdg-jack">💰 Jackpot</span>
-          <span class="bdg bdg-char">Franklin</span>
-        </div>
+        <div><div class="m-num">MISSION 02</div><div class="m-name">The Multi Target Assassination</div></div>
+        <div class="m-badges"><span class="bdg bdg-jack">💰 Jackpot</span></div>
       </div>
-      <p class="m-sub">La mission la plus rentable du jeu grâce à Redwood. Mets le paquet.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="s-head"><span class="when before">Avant</span><span class="action">Acheter</span><span class="ticker">DEB</span><span class="mkt lcn">LCN</span></div>
-          <div class="s-body">Debonaire Cigarettes. Investis tout le cash des 3 persos.</div>
-          <div class="target"><span class="lbl">Vendre à</span> +80 %</div>
-        </div>
-        <div class="step sell">
-          <div class="s-head"><span class="when after">Après</span><span class="action">Acheter</span><span class="ticker">RWC</span><span class="mkt lcn">LCN</span></div>
-          <div class="s-body">Redwood Cigarettes s'effondre après le hit. Réinvestis TOUT au plus bas. Attends plusieurs jours in-game : c'est le rebond le plus violent du jeu.</div>
-          <div class="target big"><span class="lbl">Revendre à</span> +300 %</div>
-        </div>
-      </div>
-      <p class="note"><b>Après cette mission :</b> chaque perso devrait avoisiner ~330 M$.</p>
+      <p class="m-sub">La plus rentable du jeu. Mets tout le cash des 3 persos.</p>
+      <ol class="flow">
+        <li class="fstep buy"><div class="fdot">1</div><div class="fbody">
+          <div class="fline"><span class="verb">Achète</span><span class="bigtk">DEB</span><span class="mkt lcn">LCN</span></div>
+          <div class="fdesc">Debonaire, <b>avant</b> la mission. Tout ton argent.</div></div></li>
+        <li class="fstep act"><div class="fdot">🎯</div><div class="fbody">
+          <div class="fline"><span class="verb">Fais la mission</span></div></div></li>
+        <li class="fstep sell"><div class="fdot">2</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">DEB</span><span class="gain">+80%</span></div></div></li>
+        <li class="fstep buy"><div class="fdot">3</div><div class="fbody">
+          <div class="fline"><span class="verb">Rachète</span><span class="bigtk">RWC</span><span class="mkt lcn">LCN</span></div>
+          <div class="fdesc">Redwood s'est effondré. Réinvestis <b>TOUT au plus bas</b>. Le rebond le plus violent du jeu — attends plusieurs jours in-game.</div></div></li>
+        <li class="fstep sell"><div class="fdot">4</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">RWC</span><span class="gain huge">+300%</span></div>
+          <div class="fdesc">Le gros coup. ~×4 ta mise.</div></div></li>
+      </ol>
+      <p class="m-foot">Après cette mission : <b>~330 M$</b> par perso.</p>
     </article>
 
     <!-- 3 VICE -->
     <article class="mission">
       <div class="m-top">
-        <div>
-          <div class="m-num">03</div>
-          <div class="m-name">The Vice Assassination</div>
-        </div>
-        <div class="m-badges"><span class="bdg bdg-char">Franklin</span></div>
+        <div><div class="m-num">MISSION 03</div><div class="m-name">The Vice Assassination</div></div>
       </div>
-      <p class="m-sub">Double coup sur BAWSAQ (connexion internet conseillée).</p>
-      <div class="steps">
-        <div class="step">
-          <div class="s-head"><span class="when before">Avant</span><span class="action">Acheter</span><span class="ticker">FRT</span><span class="mkt baw">BAWSAQ</span></div>
-          <div class="s-body">Fruit Computers.</div>
-          <div class="target"><span class="lbl">Vendre à</span> +50 %</div>
-        </div>
-        <div class="step sell">
-          <div class="s-head"><span class="when after">Après</span><span class="action">Acheter</span><span class="ticker">FAC</span><span class="mkt baw">BAWSAQ</span></div>
-          <div class="s-body">Facade. Achète après la vente de Fruit, attends le rebond.</div>
-          <div class="target"><span class="lbl">Revendre à</span> +33 %</div>
-        </div>
-      </div>
-      <p class="note"><b>Après cette mission :</b> ~650 M$+ par perso.</p>
+      <p class="m-sub">Deux coups sur BAWSAQ (connexion internet conseillée).</p>
+      <ol class="flow">
+        <li class="fstep buy"><div class="fdot">1</div><div class="fbody">
+          <div class="fline"><span class="verb">Achète</span><span class="bigtk">FRT</span><span class="mkt baw">BAWSAQ</span></div>
+          <div class="fdesc">Fruit Computers, <b>avant</b> la mission.</div></div></li>
+        <li class="fstep act"><div class="fdot">🎯</div><div class="fbody">
+          <div class="fline"><span class="verb">Fais la mission</span></div></div></li>
+        <li class="fstep sell"><div class="fdot">2</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">FRT</span><span class="gain">+50%</span></div></div></li>
+        <li class="fstep buy"><div class="fdot">3</div><div class="fbody">
+          <div class="fline"><span class="verb">Rachète</span><span class="bigtk">FAC</span><span class="mkt baw">BAWSAQ</span></div>
+          <div class="fdesc">Facade, au plus bas.</div></div></li>
+        <li class="fstep sell"><div class="fdot">4</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">FAC</span><span class="gain">+33%</span></div></div></li>
+      </ol>
+      <p class="m-foot">Après cette mission : <b>~650 M$+</b> par perso.</p>
     </article>
 
     <!-- 4 BUS -->
     <article class="mission">
       <div class="m-top">
-        <div>
-          <div class="m-num">04</div>
-          <div class="m-name">The Bus Assassination</div>
-        </div>
-        <div class="m-badges"><span class="bdg bdg-char">Franklin</span></div>
+        <div><div class="m-num">MISSION 04</div><div class="m-name">The Bus Assassination</div></div>
       </div>
-      <p class="m-sub">Pas d'achat avant — on « achète le crash ».</p>
-      <div class="steps">
-        <div class="step sell">
-          <div class="s-head"><span class="when after">Après</span><span class="action">Acheter</span><span class="ticker">VAP</span><span class="mkt baw">BAWSAQ</span></div>
-          <div class="s-body">Vapid s'écroule après le hit. Attends 24–48 h in-game qu'il touche le fond, achète, puis revends au sommet du rebond.</div>
-          <div class="target"><span class="lbl">Revendre à</span> +100 %</div>
-        </div>
-      </div>
-      <p class="note"><b>Après cette mission :</b> ~1,3 Md$+ par perso.</p>
+      <p class="m-sub">Pas d'achat avant — ici on « achète le crash ».</p>
+      <ol class="flow">
+        <li class="fstep act"><div class="fdot">🎯</div><div class="fbody">
+          <div class="fline"><span class="verb">Fais la mission</span></div>
+          <div class="fdesc">Sans rien acheter avant.</div></div></li>
+        <li class="fstep buy"><div class="fdot">1</div><div class="fbody">
+          <div class="fline"><span class="verb">Achète</span><span class="bigtk">VAP</span><span class="mkt baw">BAWSAQ</span></div>
+          <div class="fdesc">Vapid s'écroule après le hit. Attends 24–48 h in-game qu'il touche <b>le fond</b>, puis achète.</div></div></li>
+        <li class="fstep sell"><div class="fdot">2</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">VAP</span><span class="gain">+100%</span></div>
+          <div class="fdesc">Au sommet du rebond.</div></div></li>
+      </ol>
+      <p class="m-foot">Après cette mission : <b>~1,3 Md$+</b> par perso.</p>
     </article>
 
     <!-- 5 CONSTRUCTION -->
     <article class="mission">
       <div class="m-top">
-        <div>
-          <div class="m-num">05</div>
-          <div class="m-name">The Construction Assassination</div>
-        </div>
-        <div class="m-badges"><span class="bdg bdg-char">Franklin</span></div>
+        <div><div class="m-num">MISSION 05</div><div class="m-name">The Construction Assassination</div></div>
       </div>
       <p class="m-sub">Le dernier coup pour boucler le portefeuille.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="s-head"><span class="when before">Avant</span><span class="action">Acheter</span><span class="ticker">GCD</span><span class="mkt lcn">LCN</span></div>
-          <div class="s-body">GoldCoast Development. Investis tout le capital des 3 persos.</div>
-          <div class="target"><span class="lbl">Vendre à</span> +90 %</div>
-        </div>
-      </div>
-      <p class="note"><b>Après cette mission :</b> ~2 Mds$ par perso. 🎯</p>
+      <ol class="flow">
+        <li class="fstep buy"><div class="fdot">1</div><div class="fbody">
+          <div class="fline"><span class="verb">Achète</span><span class="bigtk">GCD</span><span class="mkt lcn">LCN</span></div>
+          <div class="fdesc">GoldCoast, <b>avant</b> la mission. Tout le capital des 3 persos.</div></div></li>
+        <li class="fstep act"><div class="fdot">🎯</div><div class="fbody">
+          <div class="fline"><span class="verb">Fais la mission</span></div></div></li>
+        <li class="fstep sell"><div class="fdot">2</div><div class="fbody">
+          <div class="fline"><span class="verb">Vends</span><span class="bigtk">GCD</span><span class="gain">+90%</span></div></div></li>
+      </ol>
+      <p class="m-foot">Après cette mission : <b>~2 Mds$</b> par perso. 🎯</p>
     </article>
 
     <div class="bigtotal">
       <div class="lbl">Objectif final</div>
       <div class="amt">~2 Mds$</div>
-      <div class="sub">par personnage · soit ~6 milliards au total sur les 3</div>
+      <div class="sub">par personnage · ~6 milliards au total sur les 3</div>
     </div>
 
     <footer>
-      <p><b>Et le reste du temps ?</b> En dehors des missions de Lester, le marché LCN bouge avec tes propres actions (détruire les véhicules d'une marque fait monter sa concurrente). Mais les assassinats restent de loin le plus rentable.</p>
+      <p><b>En dehors des missions ?</b> Le marché LCN bouge avec tes actions (détruire les véhicules d'une marque fait monter sa concurrente). Mais les assassinats restent de loin le plus rentable.</p>
       <p class="sig">// construit pour Gabriel — fais-toi le braquage de Wall Street</p>
     </footer>
-  </main>
+  </section>
 </div>
 
 <script>
