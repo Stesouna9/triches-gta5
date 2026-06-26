@@ -1,5 +1,5 @@
 /* Service worker — Triches GTA V (PWA hors-ligne) */
-const CACHE = "triches-gta5-v2";
+const CACHE = "triches-gta5-v3";
 const ASSETS = [
   "./",
   "./index.html",
