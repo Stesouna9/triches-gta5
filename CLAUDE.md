@@ -8,9 +8,10 @@ But : consulter et copier un code en un tap depuis le téléphone. Fan-site, gra
 Propriétaire : Gabriel (`stesouna9`).
 
 ## État actuel
-- `index.html` : version fonctionnelle complète (fichier unique autonome). Déjà construite.
-- `README.md` : présent.
-- **Pas encore déployé.** C'est la première tâche (voir plus bas).
+- **Déployé** sur GitHub Pages : https://stesouna9.github.io/triches-gta5/ (repo `Stesouna9/triches-gta5`, branche `main`, root).
+- `index.html` : triches (36 codes). `bourse.html` : plan d'investissement bourse (assassinats Lester). Nav Triches⇄Bourse en haut des deux pages.
+- **PWA** : `manifest.json` + `sw.js` (cache hors-ligne) + icônes (`icon-192/512/180.png`, `favicon.png`). Installable sur écran d'accueil.
+- Preview local : macOS bloque l'accès Python (sandbox) à `~/Downloads` → http.server renvoie 404. Copier le site ailleurs (ex. scratchpad) pour le preview. Git/gh OK.
 
 ## Stack & contraintes
 - **Vanilla HTML/CSS/JS dans un seul fichier.** Aucun build, aucune dépendance, aucun framework.
@@ -55,10 +56,13 @@ Pour **ajouter un code** : un seul objet dans `CHEATS`, rien d'autre à toucher 
      (adapter `<title>` et l'URL du README en conséquence).
 
 ## Backlog (par ordre suggéré)
-1. **Bilingue FR/EN** : toggle de langue (Gabriel travaille en bilingue). Externaliser les libellés UI + noms de triches dans un objet `i18n`, persister le choix en `localStorage`.
+1. **Bilingue FR/EN** : toggle de langue (Gabriel travaille en bilingue). Externaliser les libellés UI + noms de triches dans un objet `i18n`, persister le choix en `localStorage`. (À étendre à `bourse.html`.)
 2. **Favoris** : étoile par carte, persistés en `localStorage`, + filtre « Favoris ». (Possible ici car site réel, pas artifact.)
-3. **PWA légère** : `manifest.json` + icône pour « Ajouter à l'écran d'accueil » propre. Service worker optionnel pour usage hors-ligne.
+3. ~~**PWA légère**~~ — FAIT (manifest + sw.js + icônes).
 4. **Intégration OKALAM** si choisie : harmoniser nav/retour vers l'écosystème.
+
+## bourse.html
+Page statique (pas de données JS dynamiques) : les 5 missions d'assassinat de Lester en cartes `.mission`, chacune avec étapes `.step` (acheter avant/après). Données sourcées (gtabase / GTA Wiki / G2A) : RWC Redwood = jackpot ~+300%, objectif ~2 Mds$/perso. Si refonte en données : sérialiser en tableau `INVEST` similaire à `CHEATS`.
 
 ## Préférences de travail (Gabriel)
 - Direct et honnête, sans caveats répétés. Dire les choses une fois, clairement.
