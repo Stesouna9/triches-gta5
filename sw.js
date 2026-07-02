@@ -1,9 +1,12 @@
-/* Service worker — Triches GTA V (PWA hors-ligne) */
-const CACHE = "triches-gta5-v3";
+/* Service worker — Triches GTA (PWA hors-ligne) */
+const CACHE = "triches-gta-v4";
 const ASSETS = [
   "./",
   "./index.html",
+  "./gta5.html",
+  "./game.html",
   "./bourse.html",
+  "./data.js",
   "./manifest.json",
   "./icon-192.png",
   "./icon-512.png",

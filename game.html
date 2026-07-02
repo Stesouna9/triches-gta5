@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#13181a">
+<title>Triches GTA · Codes</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Triches GTA">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#13181a;--bg2:#1a2124;--surface:#1f282b;--surface2:#26312f;--line:#33403e;
+  --bone:#ECE4D2;--muted:#8c958f;--muted2:#5f6a66;
+  --amber:#F0A437;--amber-dim:#a8762a;--money:#54bd80;--vinewood:#E8487E;--gold:#F2C14E;
+  --tri:#62cf8b;--circle:#e87a90;--cross:#6fa6e6;--square:#d68fcf;--radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--bone);font-family:'Archivo',system-ui,sans-serif;line-height:1.45;
+  -webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom);
+  background-image:radial-gradient(120% 60% at 80% -10%, rgba(240,164,55,.10), transparent 60%),
+                   radial-gradient(90% 50% at -10% 0%, rgba(232,72,126,.07), transparent 55%);
+  background-attachment:fixed;
+}
+.wrap{max-width:580px;margin:0 auto;padding:0 16px}
+
+.topnav{padding:14px 16px 4px}
+.topnav .inner{max-width:580px;margin:0 auto;display:flex;gap:6px;background:var(--bg2);
+  padding:5px;border-radius:12px;border:1px solid var(--line)}
+.navbtn{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:600;font-size:13px;
+  padding:10px 4px;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:6px;transition:color .15s}
+.navbtn.active{background:var(--amber);color:#1a1205;box-shadow:0 2px 10px rgba(240,164,55,.25)}
+.navbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+.hero{padding:20px 0 8px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);
+  display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--amber-dim),transparent)}
+h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(38px,13vw,60px);line-height:.92;
+  letter-spacing:.01em;text-transform:uppercase;color:var(--bone)}
+h1 .l2{display:block;color:var(--amber)}
+.lede{color:var(--muted);font-size:14.5px;margin-top:12px;max-width:44ch}
+.stats{display:flex;gap:18px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.stats b{color:var(--bone);font-weight:700}
+
+.warn{margin-top:18px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:12px 14px;display:flex;gap:11px;align-items:flex-start}
+.stars{letter-spacing:1px;color:var(--gold);font-size:13px;flex-shrink:0;margin-top:1px}
+.warn p{font-size:12.5px;color:var(--muted)}.warn b{color:var(--bone);font-weight:600}
+
+.controls{position:sticky;top:0;z-index:30;background:linear-gradient(var(--bg) 72%, rgba(19,24,26,0));
+  padding:16px 16px 10px;margin:18px -16px 0}
+.controls .inner{max-width:580px;margin:0 auto}
+.search{position:relative}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted2)}
+.search input{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--bone);
+  font-family:inherit;font-size:15px;padding:13px 14px 13px 38px;border-radius:11px;outline:none}
+.search input::placeholder{color:var(--muted2)}
+.search input:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(240,164,55,.14)}
+
+.tabs{display:grid;gap:6px;margin-top:9px;background:var(--bg2);padding:5px;border-radius:12px;border:1px solid var(--line)}
+.tab{appearance:none;border:0;background:transparent;color:var(--muted);font-family:inherit;font-weight:600;
+  font-size:12.5px;padding:9px 4px;border-radius:8px;cursor:pointer;display:flex;flex-direction:column;
+  align-items:center;gap:3px;transition:color .15s}
+.tab .ti{font-size:15px;line-height:1}
+.tab[aria-selected="true"]{background:var(--amber);color:#1a1205;box-shadow:0 2px 10px rgba(240,164,55,.25)}
+.tab:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+.chips{display:flex;gap:7px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-family:inherit;
+  font-size:12.5px;font-weight:500;padding:7px 13px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:all .15s}
+.chip[aria-pressed="true"]{background:var(--surface2);border-color:var(--money);color:var(--bone)}
+.chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+main{padding:8px 0 40px}
+.section{margin-top:22px}.section.empty-hide{display:none}
+.sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;padding:0 2px}
+.sec-head h2{font-family:'Anton',sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;text-transform:uppercase;color:var(--bone)}
+.sec-head .count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2)}
+.sec-head .rule{flex:1;height:1px;background:var(--line)}
+
+.cheat{display:block;width:100%;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:14px 15px;margin-bottom:9px;color:inherit;font-family:inherit;
+  position:relative;overflow:hidden;transition:border-color .15s, transform .08s}
+.cheat:active{transform:scale(.992)}
+.cheat:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.cheat::after{content:"";position:absolute;inset:0;background:var(--money);opacity:0;pointer-events:none;transition:opacity .2s}
+.cheat.copied::after{opacity:.16;transition:none}
+.cheat.nocode{cursor:default}.cheat.hidden{display:none}
+.c-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
+.c-name{font-weight:600;font-size:15.5px;color:var(--bone);line-height:1.25}
+.tag{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:5px;
+  flex-shrink:0;white-space:nowrap;margin-top:1px}
+.tag-risk{background:rgba(232,72,126,.15);color:var(--vinewood)}
+.tag-note{background:rgba(111,166,230,.15);color:var(--cross)}
+
+.cv{display:none;align-items:center;flex-wrap:wrap;gap:6px;min-height:30px}
+.cv.on{display:flex}
+.num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;letter-spacing:.01em;color:var(--bone)}
+.num .pre{color:var(--amber)}
+.pcword{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:17px;letter-spacing:.06em;color:var(--money);
+  background:rgba(84,189,128,.10);padding:5px 11px;border-radius:7px}
+.pill{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;min-width:26px;height:26px;padding:0 7px;
+  border-radius:7px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg2);
+  border:1px solid var(--line);color:var(--bone)}
+.pill.face{font-family:inherit;font-size:14px;border-width:1.5px}
+.pill.tri{color:var(--tri);border-color:rgba(98,207,139,.4)}
+.pill.circle{color:var(--circle);border-color:rgba(232,122,144,.4)}
+.pill.cross{color:var(--cross);border-color:rgba(111,166,230,.4)}
+.pill.square{color:var(--square);border-color:rgba(214,143,207,.4)}
+.pill.xa{color:var(--tri)}.pill.xb{color:var(--circle)}.pill.xx{color:var(--cross)}.pill.xy{color:var(--gold)}
+.pill.dir{font-size:15px;color:var(--amber);border-color:rgba(240,164,55,.35)}
+.pill.bump{color:var(--muted);font-size:11px}
+.nocode-note{font-size:12.5px;color:var(--muted2);font-style:italic}
+.c-note{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.35}
+.hint{display:block;margin-top:9px;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted2);font-weight:600}
+.cheat.copied .hint{color:var(--money)}
+.noresults{text-align:center;color:var(--muted);padding:40px 20px;font-size:14px;display:none}
+.noresults.show{display:block}
+
+footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 36px;color:var(--muted2);font-size:12px}
+footer b{color:var(--muted);font-weight:600}
+footer .sig{margin-top:10px;color:var(--amber-dim);font-family:'JetBrains Mono',monospace;font-size:11px}
+
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);background:var(--money);color:#08130c;
+  font-weight:700;font-size:13.5px;padding:12px 20px;border-radius:30px;z-index:60;display:flex;align-items:center;gap:9px;
+  box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .32s cubic-bezier(.2,.9,.3,1);max-width:90vw}
+#toast.show{transform:translate(-50%,0)}
+#toast.warn-toast{background:var(--gold);color:#1a1404}
+#toast .tcode{font-family:'JetBrains Mono',monospace;opacity:.75;font-weight:700}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+  #toast{transition:opacity .2s!important;transform:translate(-50%,0);opacity:0}
+  #toast.show{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner" id="nav">
+    <a class="navbtn" href="index.html"><span>←</span>Jeux</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1 id="title"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="stats" id="stats"></div>
+    <div class="warn" id="warnbox" style="display:none"><span class="stars">★★★★☆</span><p id="warn"></p></div>
+  </header>
+</div>
+
+<div class="controls">
+  <div class="inner">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="q" type="search" inputmode="search" placeholder="Chercher un code…" aria-label="Chercher un code">
+    </div>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Méthode de saisie"></div>
+    <div class="chips" id="chips" role="group" aria-label="Catégories"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <main id="list"></main>
+  <p class="noresults" id="noresults">Aucun code ne correspond.</p>
+  <footer>
+    <p id="howto"></p>
+    <p class="sig">// construit pour Gabriel — bonne balade</p>
+  </footer>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script>
+const PS_FACE={"Triangle":["△","tri"],"Rond":["○","circle"],"X":["✕","cross"],"Carré":["□","square"]};
+const XB_FACE={"A":["A","xa"],"B":["B","xb"],"X":["X","xx"],"Y":["Y","xy"]};
+const DIRS={"Gauche":"←","Droite":"→","Haut":"↑","Bas":"↓"};
+
+function tokenToPill(tok,kind){
+  if(DIRS[tok]) return `<span class="pill dir">${DIRS[tok]}</span>`;
+  if(kind==="ps" && PS_FACE[tok]){const[s,c]=PS_FACE[tok];return `<span class="pill face ${c}">${s}</span>`;}
+  if(kind==="xbox" && XB_FACE[tok]){const[s,c]=XB_FACE[tok];return `<span class="pill face ${c}">${s}</span>`;}
+  if(/^(L1|L2|R1|R2|L3|R3|LB|LT|RB|RT)$/.test(tok)) return `<span class="pill bump">${tok}</span>`;
+  return `<span class="pill">${tok}</span>`;
+}
+function renderCombo(str,kind){return str.split(", ").map(t=>tokenToPill(t.trim(),kind)).join("");}
+function renderPhone(num){return `<span class="num"><span class="pre">${num.replace(/[0-9].*$/,m=>"")||""}</span>${num}</span>`;}
+function renderView(plat,val){
+  if(val==null||val==="") return `<span class="nocode-note">Indisponible pour cette méthode.</span>`;
+  switch(plat.type){
+    case "phone": return `<span class="num">${val}</span>`;
+    case "word":  return `<span class="pcword">${val}</span>`;
+    case "ps":    return renderCombo(val,"ps");
+    case "xbox":  return renderCombo(val,"xbox");
+    default:      return `<span class="pcword">${val}</span>`;
+  }
+}
+function copyValue(plat,val){
+  if(plat.type==="phone") return val.replace(/[^0-9]/g,"");
+  return val;
+}
+
+/* ---- boot ---- */
+const params=new URLSearchParams(location.search);
+const gid=params.get("g");
+const game=(window.GAMES||{})[gid];
+if(!game){location.replace("index.html");}
+
+document.title="Triches "+game.title+" · Codes";
+if(game.accent){document.documentElement.style.setProperty("--amber",game.accent);
+  document.documentElement.style.setProperty("--amber-dim",game.accentDim||game.accent);
+  document.querySelector('meta[name=theme-color]').setAttribute("content","#13181a");}
+
+// nav: Jeux + titre courant
+const nav=document.getElementById("nav");
+const cur=document.createElement("span"); cur.className="navbtn active"; cur.style.cursor="default";
+cur.innerHTML=`<span>🎮</span>${game.short||game.title}`;
+nav.appendChild(cur);
+if(game.extraTab){const e=document.createElement("a");e.className="navbtn";e.href=game.extraTab.href;
+  e.innerHTML=`<span>${game.extraTab.icon||"⭐"}</span>${game.extraTab.label}`;nav.appendChild(e);}
+
+// hero
+document.getElementById("eyebrow").textContent=game.eyebrow||("Grand Theft Auto · "+game.title);
+document.getElementById("title").innerHTML=game.h1||`Triches<span class="l2">${game.title}</span>`;
+document.getElementById("lede").textContent=game.lede||"Choisis ta méthode, cherche, appuie pour copier.";
+document.getElementById("stats").innerHTML=
+  `<span><b id="ct">0</b> codes</span><span><b>${game.platforms.length}</b> méthodes</span>`+(game.statExtra||"");
+if(game.warn){document.getElementById("warnbox").style.display="";document.getElementById("warn").innerHTML=game.warn;}
+
+// platform tabs
+const tabsBox=document.getElementById("tabs");
+tabsBox.style.gridTemplateColumns=`repeat(${game.platforms.length},1fr)`;
+let activePlat=game.platforms[0].id;
+game.platforms.forEach((p,i)=>{
+  const b=document.createElement("button");b.className="tab";b.setAttribute("role","tab");
+  b.dataset.plat=p.id;b.setAttribute("aria-selected",i===0?"true":"false");
+  b.innerHTML=`<span class="ti">${p.icon||"•"}</span>${p.label}`;
+  b.addEventListener("click",()=>{
+    activePlat=p.id;
+    tabsBox.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===b?"true":"false"));
+    showPlat();
+    if(game.howto&&game.howto[p.id])document.getElementById("howto").innerHTML=game.howto[p.id];
+  });
+  tabsBox.appendChild(b);
+});
+const platById=Object.fromEntries(game.platforms.map(p=>[p.id,p]));
+
+// build list
+const list=document.getElementById("list");
+const cats=game.cats||[];
+document.getElementById("ct").textContent=game.cheats.length;
+cats.forEach(cat=>{
+  const items=game.cheats.filter(c=>c.cat===cat.id);
+  if(!items.length) return;
+  const sec=document.createElement("section");sec.className="section";sec.dataset.cat=cat.id;
+  sec.innerHTML=`<div class="sec-head"><h2>${cat.label}</h2><span class="count">${items.length}</span><span class="rule"></span></div>`;
+  items.forEach(c=>{
+    const isShort=c.note&&c.note.length<=16;
+    const tagHtml=c.tag?`<span class="tag tag-${c.tag[0]}">${c.tag[1]}</span>`:(isShort?`<span class="tag tag-note">${c.note}</span>`:"");
+    const noteHtml=(c.note&&!isShort)?`<div class="c-note">${c.note}</div>`:"";
+    const btn=document.createElement("button");btn.className="cheat";
+    const searchStr=(c.name+" "+game.platforms.map(p=>c[p.id]||"").join(" ")+" "+(c.note||"")).toLowerCase();
+    btn.dataset.search=searchStr;
+    let views="";
+    game.platforms.forEach(p=>{views+=`<div class="cv" data-plat="${p.id}">${renderView(p,c[p.id])}</div>`;});
+    btn.innerHTML=`<div class="c-top"><span class="c-name">${c.name}</span>${tagHtml}</div>${views}${noteHtml}<span class="hint">Appuyer pour copier</span>`;
+    btn._cheat=c;
+    btn.addEventListener("click",()=>copyCheat(btn,c));
+    sec.appendChild(btn);
+  });
+  list.appendChild(sec);
+});
+
+// chips
+const chipsBox=document.getElementById("chips");let activeCat="all";
+[{id:"all",label:"Tout"}].concat(cats).forEach(cat=>{
+  const items=cat.id==="all"?game.cheats:game.cheats.filter(c=>c.cat===cat.id);
+  if(cat.id!=="all"&&!items.length) return;
+  const b=document.createElement("button");b.className="chip";b.textContent=cat.label;b.dataset.cat=cat.id;
+  b.setAttribute("aria-pressed",cat.id==="all"?"true":"false");
+  b.addEventListener("click",()=>{activeCat=cat.id;
+    chipsBox.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));applyFilter();});
+  chipsBox.appendChild(b);
+});
+
+function showPlat(){
+  document.querySelectorAll(".cv").forEach(cv=>cv.classList.toggle("on",cv.dataset.plat===activePlat));
+}
+showPlat();
+if(game.howto&&game.howto[activePlat])document.getElementById("howto").innerHTML=game.howto[activePlat];
+
+const q=document.getElementById("q");const noRes=document.getElementById("noresults");
+q.addEventListener("input",applyFilter);
+function applyFilter(){
+  const term=q.value.trim().toLowerCase();let total=0;
+  document.querySelectorAll(".section").forEach(sec=>{
+    const catOk=(activeCat==="all"||sec.dataset.cat===activeCat);let shown=0;
+    sec.querySelectorAll(".cheat").forEach(card=>{
+      const visible=catOk&&(!term||card.dataset.search.includes(term));
+      card.classList.toggle("hidden",!visible);if(visible)shown++;});
+    sec.classList.toggle("empty-hide",shown===0);total+=shown;});
+  noRes.classList.toggle("show",total===0);
+}
+
+let toastTimer;
+function copyCheat(btn,c){
+  const plat=platById[activePlat];const val=c[activePlat];
+  if(val==null||val===""){showToast("Indisponible pour cette méthode","",true);return;}
+  const copyStr=copyValue(plat,val);
+  navigator.clipboard?.writeText(copyStr).then(done).catch(()=>{
+    const ta=document.createElement("textarea");ta.value=copyStr;document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();});
+  function done(){btn.classList.add("copied");if(navigator.vibrate)navigator.vibrate(12);
+    setTimeout(()=>btn.classList.remove("copied"),500);showToast("Copié — "+c.name,copyStr);}
+}
+function showToast(msg,code,warn){
+  const t=document.getElementById("toast");t.className=warn?"warn-toast":"";
+  t.innerHTML=`<span>${warn?"⚠":"✓"} ${msg}</span>`+(code?`<span class="tcode">${code}</span>`:"");
+  void t.offsetWidth;t.classList.add("show");clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove("show"),1900);
+}
+
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}
+</script>
+</body>
+</html>

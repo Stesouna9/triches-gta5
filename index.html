@@ -4,524 +4,132 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#13181a">
-<title>Triches GTA V · Mode histoire</title>
+<title>Triches GTA · Tous les jeux</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Triches GTA V">
+<meta name="apple-mobile-web-app-title" content="Triches GTA">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Tous les codes de triche de GTA V (mode solo) + plan d'investissement bourse des missions d'assassinat. Mobile-first, copie au tap.">
+<meta name="description" content="Tous les codes de triche des jeux GTA (mode solo) : GTA V, San Andreas, Vice City, GTA III, GTA IV. Mobile-first, copie au tap.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#13181a;
-  --bg2:#1a2124;
-  --surface:#1f282b;
-  --surface2:#26312f;
-  --line:#33403e;
-  --bone:#ECE4D2;
-  --muted:#8c958f;
-  --muted2:#5f6a66;
-  --amber:#F0A437;
-  --amber-dim:#a8762a;
-  --money:#54bd80;
-  --vinewood:#E8487E;
-  --gold:#F2C14E;
-  --tri:#62cf8b; --circle:#e87a90; --cross:#6fa6e6; --square:#d68fcf;
-  --radius:14px;
+  --bg:#13181a;--bg2:#1a2124;--surface:#1f282b;--surface2:#26312f;--line:#33403e;
+  --bone:#ECE4D2;--muted:#8c958f;--muted2:#5f6a66;
+  --amber:#F0A437;--amber-dim:#a8762a;--money:#54bd80;--vinewood:#E8487E;--gold:#F2C14E;--radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
-  background:var(--bg);
-  color:var(--bone);
-  font-family:'Archivo',system-ui,sans-serif;
-  line-height:1.45;
-  -webkit-font-smoothing:antialiased;
-  padding-bottom:env(safe-area-inset-bottom);
+  background:var(--bg);color:var(--bone);font-family:'Archivo',system-ui,sans-serif;line-height:1.45;
+  -webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom);
   background-image:radial-gradient(120% 60% at 80% -10%, rgba(240,164,55,.10), transparent 60%),
-                   radial-gradient(90% 50% at -10% 0%, rgba(232,72,126,.07), transparent 55%);
+                   radial-gradient(90% 50% at -10% 0%, rgba(232,72,126,.08), transparent 55%);
   background-attachment:fixed;
 }
-.wrap{max-width:580px;margin:0 auto;padding:0 16px}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
 
-/* ---- top nav (triches / bourse) ---- */
-.topnav{padding:14px 16px 4px}
-.topnav .inner{max-width:580px;margin:0 auto;display:flex;gap:6px;background:var(--bg2);
-  padding:5px;border-radius:12px;border:1px solid var(--line)}
-.navbtn{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:600;font-size:13px;
-  padding:10px 4px;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:6px;transition:color .15s}
-.navbtn.active{background:var(--amber);color:#1a1205;box-shadow:0 2px 10px rgba(240,164,55,.25)}
-.navbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-
-/* ---- hero ---- */
-.hero{padding:26px 0 8px}
-.eyebrow{
-  font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--amber);display:flex;align-items:center;gap:8px;margin-bottom:14px;
-}
+.hero{padding:34px 0 8px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);
+  display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--amber-dim),transparent)}
-h1{
-  font-family:'Anton',sans-serif;font-weight:400;
-  font-size:clamp(40px,13vw,62px);line-height:.92;letter-spacing:.01em;
-  text-transform:uppercase;color:var(--bone);
-}
-h1 .l2{display:block;color:var(--amber);-webkit-text-stroke:0}
-.lede{color:var(--muted);font-size:14.5px;margin-top:12px;max-width:42ch}
+h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(42px,14vw,66px);line-height:.9;
+  letter-spacing:.01em;text-transform:uppercase;color:var(--bone)}
+h1 .l2{display:block;color:var(--amber)}
+.lede{color:var(--muted);font-size:14.5px;margin-top:12px;max-width:44ch}
 .stats{display:flex;gap:18px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)}
 .stats b{color:var(--bone);font-weight:700}
 
-/* ---- wanted warning ---- */
-.warn{
-  margin-top:18px;background:var(--bg2);border:1px solid var(--line);
-  border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px;
-  display:flex;gap:11px;align-items:flex-start;
-}
-.stars{letter-spacing:1px;color:var(--gold);font-size:13px;flex-shrink:0;margin-top:1px}
-.warn p{font-size:12.5px;color:var(--muted)}
-.warn b{color:var(--bone);font-weight:600}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin:26px 0 20px}
+@media(min-width:520px){.grid{grid-template-columns:1fr 1fr}}
 
-/* ---- sticky controls ---- */
-.controls{
-  position:sticky;top:0;z-index:30;
-  background:linear-gradient(var(--bg) 72%, rgba(19,24,26,.0));
-  padding:16px 16px 10px;margin:18px -16px 0;
-}
-.controls .inner{max-width:580px;margin:0 auto}
-.search{position:relative}
-.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted2)}
-.search input{
-  width:100%;background:var(--surface);border:1px solid var(--line);color:var(--bone);
-  font-family:inherit;font-size:15px;padding:13px 14px 13px 38px;border-radius:11px;outline:none;
-}
-.search input::placeholder{color:var(--muted2)}
-.search input:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(240,164,55,.14)}
-
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:9px;
-  background:var(--bg2);padding:5px;border-radius:12px;border:1px solid var(--line)}
-.tab{
-  appearance:none;border:0;background:transparent;color:var(--muted);
-  font-family:inherit;font-weight:600;font-size:12.5px;padding:9px 4px;border-radius:8px;
-  cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;transition:color .15s;
-}
-.tab .ti{font-size:15px;line-height:1}
-.tab[aria-selected="true"]{background:var(--amber);color:#1a1205;box-shadow:0 2px 10px rgba(240,164,55,.25)}
-.tab:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-
-.chips{display:flex;gap:7px;overflow-x:auto;margin-top:10px;padding-bottom:2px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.chips::-webkit-scrollbar{display:none}
-.chip{
-  flex-shrink:0;background:var(--surface);border:1px solid var(--line);color:var(--muted);
-  font-family:inherit;font-size:12.5px;font-weight:500;padding:7px 13px;border-radius:20px;cursor:pointer;
-  white-space:nowrap;transition:all .15s;
-}
-.chip[aria-pressed="true"]{background:var(--surface2);border-color:var(--money);color:var(--bone)}
-.chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-
-/* ---- list ---- */
-main{padding:8px 0 40px}
-.section{margin-top:22px}
-.section.empty-hide{display:none}
-.sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;padding:0 2px}
-.sec-head h2{font-family:'Anton',sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;
-  text-transform:uppercase;color:var(--bone)}
-.sec-head .count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2)}
-.sec-head .rule{flex:1;height:1px;background:var(--line)}
-
-.cheat{
-  display:block;width:100%;text-align:left;cursor:pointer;
+.gcard{
+  --accent:var(--amber);
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;position:relative;overflow:hidden;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:14px 15px;margin-bottom:9px;color:inherit;font-family:inherit;
-  position:relative;overflow:hidden;transition:border-color .15s, transform .08s;
+  padding:18px 17px 15px;transition:border-color .15s, transform .08s;min-height:132px;
 }
-.cheat:active{transform:scale(.992)}
-.cheat:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-.cheat::after{content:"";position:absolute;inset:0;background:var(--money);opacity:0;pointer-events:none;transition:opacity .2s}
-.cheat.copied::after{opacity:.16;transition:none}
-.cheat.nocode{cursor:default}
-.cheat.hidden{display:none}
+.gcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.gcard::after{content:"";position:absolute;right:-30%;top:-60%;width:70%;height:170%;
+  background:radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent);pointer-events:none}
+.gcard:hover{border-color:color-mix(in srgb, var(--accent) 55%, var(--line))}
+.gcard:active{transform:scale(.99)}
+.gcard:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.gc-abbr{font-family:'Anton',sans-serif;font-size:13px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+.gc-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2)}
+.gc-title{font-family:'Anton',sans-serif;font-weight:400;font-size:27px;line-height:.98;letter-spacing:.01em;
+  text-transform:uppercase;color:var(--bone);margin:10px 0 3px}
+.gc-city{font-size:12.5px;color:var(--muted)}
+.gc-foot{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.gc-count{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--bone)}
+.gc-count span{color:var(--muted2);font-weight:500}
+.gc-tags{display:flex;gap:5px}
+.gc-tag{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:5px;
+  background:color-mix(in srgb, var(--accent) 16%, transparent);color:var(--accent);white-space:nowrap}
+.gc-go{position:absolute;right:14px;bottom:14px;color:var(--accent);font-size:18px;opacity:.0;transition:opacity .15s}
+.gcard:hover .gc-go{opacity:.6}
 
-.c-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
-.c-name{font-weight:600;font-size:15.5px;color:var(--bone);line-height:1.25}
-.tag{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-  padding:3px 7px;border-radius:5px;flex-shrink:0;white-space:nowrap;margin-top:1px}
-.tag-time{background:rgba(242,193,78,.14);color:var(--gold)}
-.tag-risk{background:rgba(232,72,126,.15);color:var(--vinewood)}
-.tag-unlock{background:rgba(111,166,230,.15);color:var(--cross)}
-
-/* code views */
-.cv{display:none;align-items:center;flex-wrap:wrap;gap:6px;min-height:30px}
-body[data-platform="phone"] .cv-phone{display:flex}
-body[data-platform="ps"]    .cv-ps{display:flex}
-body[data-platform="xbox"]  .cv-xbox{display:flex}
-body[data-platform="pc"]    .cv-pc{display:flex}
-
-.num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;letter-spacing:.01em;color:var(--bone)}
-.num .pre{color:var(--amber)}
-.pcword{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:17px;letter-spacing:.06em;
-  color:var(--money);background:rgba(84,189,128,.10);padding:5px 11px;border-radius:7px}
-
-/* button pills */
-.pill{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;
-  min-width:26px;height:26px;padding:0 7px;border-radius:7px;
-  display:inline-flex;align-items:center;justify-content:center;
-  background:var(--bg2);border:1px solid var(--line);color:var(--bone)}
-.pill.face{font-family:inherit;font-size:14px;border-width:1.5px}
-.pill.tri{color:var(--tri);border-color:rgba(98,207,139,.4)}
-.pill.circle{color:var(--circle);border-color:rgba(232,122,144,.4)}
-.pill.cross{color:var(--cross);border-color:rgba(111,166,230,.4)}
-.pill.square{color:var(--square);border-color:rgba(214,143,207,.4)}
-.pill.xa{color:var(--tri)} .pill.xb{color:var(--circle)} .pill.xx{color:var(--cross)} .pill.xy{color:var(--gold)}
-.pill.dir{font-size:15px;color:var(--amber);border-color:rgba(240,164,55,.35)}
-.pill.bump{color:var(--muted);font-size:11px}
-
-.nocode-note{font-size:12.5px;color:var(--muted2);font-style:italic}
-.hint{display:block;margin-top:9px;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;
-  color:var(--muted2);font-weight:600}
-.cheat.copied .hint{color:var(--money)}
-
-.noresults{text-align:center;color:var(--muted);padding:40px 20px;font-size:14px;display:none}
-.noresults.show{display:block}
-
-/* footer */
-footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 36px;color:var(--muted2);font-size:12px}
+footer{border-top:1px solid var(--line);margin-top:14px;padding:22px 0 40px;color:var(--muted2);font-size:12px}
 footer b{color:var(--muted);font-weight:600}
 footer .sig{margin-top:10px;color:var(--amber-dim);font-family:'JetBrains Mono',monospace;font-size:11px}
-
-/* toast */
-#toast{
-  position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);
-  background:var(--money);color:#08130c;font-weight:700;font-size:13.5px;
-  padding:12px 20px;border-radius:30px;z-index:60;display:flex;align-items:center;gap:9px;
-  box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .32s cubic-bezier(.2,.9,.3,1);
-  max-width:90vw;
-}
-#toast.show{transform:translate(-50%,0)}
-#toast.warn-toast{background:var(--gold);color:#1a1404}
-#toast .tcode{font-family:'JetBrains Mono',monospace;opacity:.75;font-weight:700}
-
-@media (prefers-reduced-motion: reduce){
-  *{transition:none!important;animation:none!important}
-  #toast{transition:opacity .2s!important;transform:translate(-50%,0);opacity:0}
-  #toast.show{opacity:1}
-}
 </style>
 </head>
-<body data-platform="phone">
-
-<nav class="topnav">
-  <div class="inner">
-    <a class="navbtn active" href="index.html"><span>🎮</span>Triches</a>
-    <a class="navbtn" href="bourse.html"><span>📈</span>Bourse</a>
-  </div>
-</nav>
+<body>
 
 <div class="wrap">
   <header class="hero">
-    <div class="eyebrow">Grand Theft Auto V · Mode histoire</div>
-    <h1>Triches de<span class="l2">Los Santos</span></h1>
-    <p class="lede">Tous les codes du solo, à portée de pouce. Choisis ta méthode, cherche, appuie pour copier.</p>
+    <div class="eyebrow">Grand Theft Auto · Mode histoire</div>
+    <h1>Triches<span class="l2">GTA</span></h1>
+    <p class="lede">Tous les codes de triche des GTA solo, à portée de pouce. Choisis ton jeu.</p>
     <div class="stats">
-      <span><b id="ct">0</b> codes</span>
-      <span><b>4</b> méthodes</span>
-      <span><b>0€</b> de triche d'argent</span>
-    </div>
-    <div class="warn">
-      <span class="stars">★★★★☆</span>
-      <p><b>Avant de tricher :</b> activer un code coupe les trophées/succès pour la session. Sauvegarde avant, recharge une partie propre après. Aucun effet ne s'enregistre. Rien ne marche en ligne.</p>
+      <span><b id="ngames">5</b> jeux</span>
+      <span><b id="ncodes">—</b> codes</span>
+      <span><b>0€</b></span>
     </div>
   </header>
-</div>
 
-<div class="controls">
-  <div class="inner">
-    <div class="search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input id="q" type="search" inputmode="search" placeholder="Chercher un code (invincibilité, buzzard…)" aria-label="Chercher un code">
-    </div>
-    <div class="tabs" role="tablist" aria-label="Méthode de saisie">
-      <button class="tab" role="tab" data-plat="phone" aria-selected="true"><span class="ti">📞</span>Téléphone</button>
-      <button class="tab" role="tab" data-plat="ps" aria-selected="false"><span class="ti">▲</span>PlayStation</button>
-      <button class="tab" role="tab" data-plat="xbox" aria-selected="false"><span class="ti">✛</span>Xbox</button>
-      <button class="tab" role="tab" data-plat="pc" aria-selected="false"><span class="ti">⌨</span>PC</button>
-    </div>
-    <div class="chips" id="chips" role="group" aria-label="Catégories"></div>
-  </div>
-</div>
+  <main class="grid" id="grid"></main>
 
-<div class="wrap">
-  <main id="list"></main>
-  <p class="noresults" id="noresults">Aucun code ne correspond. Essaie « hélico », « santé » ou « météo ».</p>
   <footer>
-    <p id="howto"><b>Saisie téléphone :</b> ouvre le portable (haut de la croix), clavier, compose le numéro. Le plus simple — un seul code, valable PS5/PS4, Xbox One/Series et PC.</p>
-    <p class="sig">// construit pour Gabriel — bonne balade à Los Santos</p>
+    <p><b>Fan-site gratuit.</b> Codes pour le mode histoire / solo uniquement. Rien ne marche en ligne (GTA Online). Activer un code peut désactiver trophées/succès pour la session — sauvegarde avant.</p>
+    <p class="sig">// construit pour Gabriel — bonne balade dans tous les Los Santos</p>
   </footer>
 </div>
 
-<div id="toast" role="status" aria-live="polite"></div>
-
+<script src="data.js"></script>
 <script>
-const CHEATS = [
- {cat:"combat", name:"Invincibilité", tag:["time","5 min"], phone:"1-999-724-654-5537",
-  ps:"Droite, X, Droite, Gauche, Droite, R1, Droite, Gauche, X, Triangle",
-  xbox:"Droite, A, Droite, Gauche, Droite, RB, Droite, Gauche, A, Y", pc:"PAINKILLER"},
- {cat:"combat", name:"Santé + armure max", phone:"1-999-887-853",
-  ps:"Rond, L1, Triangle, R2, X, Carré, Rond, Droite, Carré, L1, L1, L1",
-  xbox:"B, LB, Y, RT, A, X, B, Droite, X, LB, LB, LB", pc:"TURTLE"},
- {cat:"combat", name:"Armes + munitions", phone:"1-999-866-587",
-  ps:"Triangle, R2, Gauche, L1, X, Droite, Triangle, Bas, Carré, L1, L1, L1",
-  xbox:"Y, RT, Gauche, LB, A, Droite, Y, Bas, X, LB, LB, LB", pc:"TOOLUP"},
- {cat:"combat", name:"Munitions explosives", tag:["risk","danger"], phone:"1-999-444-439",
-  ps:"Droite, Carré, X, Gauche, R1, R2, Gauche, Droite, Droite, L1, L1, L1",
-  xbox:"Droite, X, A, Gauche, RB, RT, Gauche, Droite, Droite, LB, LB, LB", pc:"HIGHEX"},
- {cat:"combat", name:"Munitions incendiaires", tag:["risk","danger"], phone:"1-999-462-363-4279",
-  ps:"L1, R1, Carré, R1, Gauche, R2, R1, Gauche, Carré, Droite, L1, L1",
-  xbox:"LB, RB, X, RB, Gauche, RT, RB, Gauche, X, Droite, LB, LB", pc:"INCENDIARY"},
- {cat:"combat", name:"Coups de poing explosifs", tag:["risk","danger"], phone:"1-999-468-42637",
-  ps:"Droite, Gauche, X, Triangle, R1, Rond, Rond, Rond, L2",
-  xbox:"Droite, Gauche, A, Y, RB, B, B, B, LT", pc:"HOTHANDS"},
- {cat:"combat", name:"Baisser le niveau de recherche", phone:"1-999-529-93787",
-  ps:"R1, R1, Rond, R2, Droite, Gauche, Droite, Gauche, Droite, Gauche",
-  xbox:"RB, RB, B, RT, Droite, Gauche, Droite, Gauche, Droite, Gauche", pc:"LAWYERUP"},
- {cat:"combat", name:"Augmenter le niveau de recherche", tag:["risk","danger"], phone:"1-999-384-48483",
-  ps:"R1, R1, Rond, R2, Gauche, Droite, Gauche, Droite, Gauche, Droite",
-  xbox:"RB, RB, B, RT, Gauche, Droite, Gauche, Droite, Gauche, Droite", pc:"FUGITIVE"},
-
- {cat:"move", name:"Recharge capacité spéciale", phone:"1-999-769-3787",
-  ps:"X, X, Carré, R1, L1, X, Droite, Gauche, X",
-  xbox:"A, A, X, RB, LB, A, Droite, Gauche, A", pc:"POWERUP"},
- {cat:"move", name:"Super saut", phone:"1-999-467-8648",
-  ps:"Gauche, Gauche, Triangle, Triangle, Droite, Droite, Gauche, Droite, Carré, R1, R2",
-  xbox:"Gauche, Gauche, Y, Y, Droite, Droite, Gauche, Droite, X, RB, RT", pc:"HOPTOIT"},
- {cat:"move", name:"Course rapide", phone:"1-999-228-2463",
-  ps:"Triangle, Gauche, Droite, Droite, L2, L1, Carré",
-  xbox:"Y, Gauche, Droite, Droite, LT, LB, X", pc:"CATCHME"},
- {cat:"move", name:"Nage rapide", phone:"1-999-468-44557",
-  ps:"Gauche, Gauche, L1, Droite, Droite, R2, Gauche, L2, Droite",
-  xbox:"Gauche, Gauche, LB, Droite, Droite, RT, Gauche, LT, Droite", pc:"GOTGILLS"},
- {cat:"move", name:"Parachute", phone:"1-999-759-3483",
-  ps:"Gauche, Droite, L1, L2, R1, R2, R2, Gauche, Gauche, Droite, L1",
-  xbox:"Gauche, Droite, LB, LT, RB, RT, RT, Gauche, Gauche, Droite, LB", pc:"SKYDIVE"},
- {cat:"move", name:"Chute du ciel (Skyfall)", tag:["risk","danger"], phone:"1-999-759-3255",
-  ps:"L1, L2, R1, R2, Gauche, Droite, Gauche, Droite, L1, L2, R1, R2, Gauche, Droite, Gauche, Droite",
-  xbox:"LB, LT, RB, RT, Gauche, Droite, Gauche, Droite, LB, LT, RB, RT, Gauche, Droite, Gauche, Droite", pc:"SKYFALL"},
- {cat:"move", name:"Visée au ralenti", phone:"1-999-332-3393",
-  ps:"Carré, L2, R1, Triangle, Gauche, Carré, L2, Droite, X",
-  xbox:"X, LT, RB, Y, Gauche, X, LT, Droite, A", pc:"DEADEYE"},
-
- {cat:"world", name:"Ralenti", phone:"1-999-756-966",
-  ps:"Triangle, Gauche, Droite, Droite, Carré, R2, R1",
-  xbox:"Y, Gauche, Droite, Droite, X, RT, RB", pc:"SLOWMO"},
- {cat:"world", name:"Mode ivre", phone:"1-999-547-867",
-  ps:"Triangle, Droite, Droite, Gauche, Droite, Carré, Rond, Gauche",
-  xbox:"Y, Droite, Droite, Gauche, Droite, X, B, Gauche", pc:"LIQUOR"},
- {cat:"world", name:"Changer la météo", phone:"1-999-625-348-7246",
-  ps:"R2, X, L1, L1, L2, L2, L2, Carré",
-  xbox:"RT, A, LB, LB, LT, LT, LT, X", pc:"MAKEITRAIN"},
- {cat:"world", name:"Gravité lunaire", phone:"1-999-356-2837",
-  ps:"Gauche, Gauche, L1, R1, L1, Droite, Gauche, L1, Gauche",
-  xbox:"Gauche, Gauche, LB, RB, LB, Droite, Gauche, LB, Gauche", pc:"FLOATER"},
- {cat:"world", name:"Pneus glissants", phone:"1-999-766-9329",
-  ps:"Triangle, R1, R1, Gauche, R1, L1, R2, L1",
-  xbox:"Y, RB, RB, Gauche, RB, LB, RT, LB", pc:"SNOWDAY"},
-
- {cat:"veh", name:"Buzzard — hélico armé", phone:"1-999-289-9633",
-  ps:"Rond, Rond, L1, Rond, Rond, Rond, L1, L2, R1, Triangle, Rond, Triangle",
-  xbox:"B, B, LB, B, B, B, LB, LT, RB, Y, B, Y", pc:"BUZZOFF"},
- {cat:"veh", name:"Comet — voiture de sport", phone:"1-999-266-38",
-  ps:"R1, Rond, R2, Droite, L1, L2, X, X, Carré, R1",
-  xbox:"RB, B, RT, Droite, LB, LT, A, A, X, RB", pc:"COMET"},
- {cat:"veh", name:"Rapid GT — voiture de sport", phone:"1-999-727-4348",
-  ps:"R2, L1, Rond, Droite, L1, R1, Droite, Gauche, Rond, R2",
-  xbox:"RT, LB, B, Droite, LB, RB, Droite, Gauche, B, RT", pc:"RAPIDGT"},
- {cat:"veh", name:"Caddy — voiturette de golf", phone:"1-999-4653-461",
-  ps:"Rond, L1, Gauche, R1, L2, X, R1, L1, Rond, X",
-  xbox:"B, LB, Gauche, RB, LT, A, RB, LB, B, A", pc:"HOLEIN1"},
- {cat:"veh", name:"PCJ-600 — moto", phone:"1-999-762-538",
-  ps:"R1, Droite, Gauche, Droite, R2, Gauche, Droite, Carré, Droite, L2, L1, L1",
-  xbox:"RB, Droite, Gauche, Droite, RT, Gauche, Droite, X, Droite, LT, LB, LB", pc:"ROCKET"},
- {cat:"veh", name:"Sanchez — moto-cross", phone:"1-999-633-7623",
-  ps:"Rond, X, L1, Rond, Rond, L1, Rond, R1, R2, L2, L1, L1",
-  xbox:"B, A, LB, B, B, LB, B, RB, RT, LT, LB, LB", pc:"OFFROAD"},
- {cat:"veh", name:"BMX — vélo", phone:"1-999-226-348",
-  ps:"Gauche, Gauche, Droite, Droite, Gauche, Droite, Carré, Rond, Triangle, R1, R2",
-  xbox:"Gauche, Gauche, Droite, Droite, Gauche, Droite, X, B, Y, RB, RT", pc:"BANDIT"},
- {cat:"veh", name:"Trashmaster — camion-poubelle", phone:"1-999-872-7433",
-  ps:"Rond, R1, Rond, R1, Gauche, Gauche, R1, L1, Rond, Droite",
-  xbox:"B, RB, B, RB, Gauche, Gauche, RB, LB, B, Droite", pc:"TRASHED"},
- {cat:"veh", name:"Limousine", phone:"1-999-846-39663",
-  ps:"R2, Droite, L2, Gauche, Gauche, R1, L1, Rond, Droite",
-  xbox:"RT, Droite, LT, Gauche, Gauche, RB, LB, B, Droite", pc:"VINEWOOD"},
- {cat:"veh", name:"Duster — avion épandeur", phone:"1-999-359-77729",
-  ps:"Droite, Gauche, R1, R1, R1, Gauche, Triangle, Triangle, X, Rond, L1, L1",
-  xbox:"Droite, Gauche, RB, RB, RB, Gauche, Y, Y, A, B, LB, LB", pc:"FLYSPRAY"},
- {cat:"veh", name:"Stunt Plane — avion de voltige", phone:"1-999-2276-78676",
-  ps:"Rond, Droite, L1, L2, Gauche, R1, L1, L1, Gauche, Gauche, X, Triangle",
-  xbox:"B, Droite, LB, LT, Gauche, RB, LB, LB, Gauche, Gauche, A, Y", pc:"BARNSTORM"},
-
- {cat:"unlock", name:"Duke O'Death", tag:["unlock","défi Duel"], phone:"1-999-332-84227", ps:null, xbox:null, pc:"DEATHCAR"},
- {cat:"unlock", name:"Sous-marin Kraken", tag:["unlock","défi Photo animalière"], phone:"1-999-282-2537", ps:null, xbox:null, pc:"BUBBLES"},
- {cat:"unlock", name:"Hydravion Dodo", tag:["unlock","défi hydravion"], phone:"1-999-398-4628", ps:null, xbox:null, pc:"EXTINCT"},
+// ordre + méta d'affichage du hub. count : si le jeu est dans GAMES (moteur), calculé ; sinon fixe.
+const HUB=[
+  {id:"gtav",       href:"gta5.html",        abbr:"GTA V",  title:"GTA V",          city:"Los Santos · 2013",     accent:"#F0A437", count:36, tags:["Bourse","Téléphone"]},
+  {id:"sanandreas", href:"game.html?g=sanandreas", abbr:"GTA SA", title:"San Andreas", city:"San Andreas · 2004", accent:"#86C34A", tags:["Manette","PC"]},
+  {id:"vicecity",   href:"game.html?g=vicecity",   abbr:"GTA VC", title:"Vice City",   city:"Vice City · 2002",   accent:"#FF5FA2", tags:["Manette","PC"]},
+  {id:"gta3",       href:"game.html?g=gta3",       abbr:"GTA III",title:"GTA III",     city:"Liberty City · 2001",accent:"#8AA6BA", tags:["Manette","PC"]},
+  {id:"gta4",       href:"game.html?g=gta4",       abbr:"GTA IV", title:"GTA IV",      city:"Liberty City · 2008",accent:"#E0894A", tags:["Téléphone"]},
 ];
-
-const CATS = [
-  {id:"all",   label:"Tout"},
-  {id:"combat",label:"Survie & combat"},
-  {id:"move",  label:"Joueur & déplacement"},
-  {id:"world", label:"Monde & ambiance"},
-  {id:"veh",   label:"Véhicules"},
-  {id:"unlock",label:"À débloquer"},
-];
-
-const HOWTO = {
-  phone:"<b>Saisie téléphone :</b> ouvre le portable (haut de la croix), clavier, compose le numéro. Le plus simple — un seul code, valable PS5/PS4, Xbox One/Series et PC.",
-  ps:"<b>Saisie manette PlayStation :</b> entre la combinaison directement en jeu (croix directionnelle pour les flèches). Marche aussi en pause. PS3/PS4/PS5.",
-  xbox:"<b>Saisie manette Xbox :</b> entre la combinaison rapidement en jeu, croix directionnelle pour les flèches. Xbox 360/One/Series.",
-  pc:"<b>Saisie PC :</b> appuie sur la touche à gauche du « 1 » (~ ou ¬) pour ouvrir la console, tape le mot en majuscules, Entrée."
-};
-
-/* ---- combo → pills ---- */
-const PS_FACE = {"Triangle":["△","tri"],"Rond":["○","circle"],"X":["✕","cross"],"Carré":["□","square"]};
-const XB_FACE = {"A":["A","xa"],"B":["B","xb"],"X":["X","xx"],"Y":["Y","xy"]};
-const DIRS = {"Gauche":"←","Droite":"→","Haut":"↑","Bas":"↓"};
-
-function tokenToPill(tok, plat){
-  if(DIRS[tok]) return `<span class="pill dir">${DIRS[tok]}</span>`;
-  if(plat==="ps" && PS_FACE[tok]){const[s,c]=PS_FACE[tok];return `<span class="pill face ${c}">${s}</span>`;}
-  if(plat==="xbox" && XB_FACE[tok]){const[s,c]=XB_FACE[tok];return `<span class="pill face ${c}">${s}</span>`;}
-  if(/^(L1|L2|R1|R2|LB|LT|RB|RT)$/.test(tok)) return `<span class="pill bump">${tok}</span>`;
-  return `<span class="pill">${tok}</span>`;
-}
-function renderCombo(str, plat){
-  return str.split(", ").map(t=>tokenToPill(t.trim(),plat)).join("");
-}
-function renderPhone(num){
-  return `<span class="num"><span class="pre">1-999-</span>${num.replace(/^1-999-/,"")}</span>`;
-}
-
-/* ---- build DOM ---- */
-const list = document.getElementById("list");
-document.getElementById("ct").textContent = CHEATS.length;
-
-CATS.filter(c=>c.id!=="all").forEach(cat=>{
-  const items = CHEATS.filter(c=>c.cat===cat.id);
-  const sec = document.createElement("section");
-  sec.className="section"; sec.dataset.cat=cat.id;
-  sec.innerHTML = `<div class="sec-head"><h2>${cat.label}</h2><span class="count">${items.length}</span><span class="rule"></span></div>`;
-  items.forEach(c=>{
-    const tagHtml = c.tag ? `<span class="tag tag-${c.tag[0]}">${c.tag[1]}</span>` : "";
-    const noCombo = `<span class="nocode-note">Pas de combo manette — utilise Téléphone ou PC.</span>`;
-    const psView   = c.ps   ? renderCombo(c.ps,"ps")     : noCombo;
-    const xboxView = c.xbox ? renderCombo(c.xbox,"xbox") : noCombo;
-    const btn = document.createElement("button");
-    btn.className="cheat";
-    btn.dataset.search = (c.name+" "+c.pc+" "+c.phone+" "+(c.tag?c.tag[1]:"")).toLowerCase();
-    btn.dataset.phone=c.phone; btn.dataset.ps=c.ps||""; btn.dataset.xbox=c.xbox||""; btn.dataset.pc=c.pc;
-    btn.innerHTML = `
-      <div class="c-top"><span class="c-name">${c.name}</span>${tagHtml}</div>
-      <div class="cv cv-phone">${renderPhone(c.phone)}</div>
-      <div class="cv cv-ps">${psView}</div>
-      <div class="cv cv-xbox">${xboxView}</div>
-      <div class="cv cv-pc"><span class="pcword">${c.pc}</span></div>
-      <span class="hint">Appuyer pour copier</span>`;
-    btn.addEventListener("click",()=>copyCheat(btn));
-    sec.appendChild(btn);
-  });
-  list.appendChild(sec);
+const G=window.GAMES||{};
+const grid=document.getElementById("grid");let total=0;
+HUB.forEach(h=>{
+  const count = (G[h.id]&&G[h.id].cheats)?G[h.id].cheats.length:(h.count||0);
+  total+=count;
+  const a=document.createElement("a");a.className="gcard";a.href=h.href;a.style.setProperty("--accent",h.accent);
+  a.innerHTML=`
+    <div class="gc-top"><span class="gc-abbr">${h.abbr}</span><span class="gc-year">${h.city.split("· ")[1]||""}</span></div>
+    <div class="gc-title">${h.title}</div>
+    <div class="gc-city">${h.city.split(" · ")[0]}</div>
+    <div class="gc-foot">
+      <span class="gc-count">${count} <span>codes</span></span>
+      <span class="gc-tags">${h.tags.map(t=>`<span class="gc-tag">${t}</span>`).join("")}</span>
+    </div>
+    <span class="gc-go">→</span>`;
+  grid.appendChild(a);
 });
-
-/* ---- chips ---- */
-const chipsBox = document.getElementById("chips");
-let activeCat = "all";
-CATS.forEach(cat=>{
-  const b=document.createElement("button");
-  b.className="chip"; b.textContent=cat.label; b.dataset.cat=cat.id;
-  b.setAttribute("aria-pressed", cat.id==="all" ? "true":"false");
-  b.addEventListener("click",()=>{activeCat=cat.id;
-    chipsBox.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x===b?"true":"false"));
-    applyFilter();
-  });
-  chipsBox.appendChild(b);
-});
-
-/* ---- tabs ---- */
-document.querySelectorAll(".tab").forEach(t=>{
-  t.addEventListener("click",()=>{
-    document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected", x===t?"true":"false"));
-    document.body.dataset.platform = t.dataset.plat;
-    document.getElementById("howto").innerHTML = HOWTO[t.dataset.plat];
-    applyFilter();
-  });
-});
-
-/* ---- search + filter ---- */
-const q = document.getElementById("q");
-const noRes = document.getElementById("noresults");
-q.addEventListener("input", applyFilter);
-
-function applyFilter(){
-  const term = q.value.trim().toLowerCase();
-  const plat = document.body.dataset.platform;
-  let total=0;
-  document.querySelectorAll(".section").forEach(sec=>{
-    const catOk = (activeCat==="all" || sec.dataset.cat===activeCat);
-    let shown=0;
-    sec.querySelectorAll(".cheat").forEach(card=>{
-      const matchText = !term || card.dataset.search.includes(term);
-      // hide combo-less cards when on ps/xbox AND searching/looking specifically? keep visible but note shown
-      const visible = catOk && matchText;
-      card.classList.toggle("hidden", !visible);
-      if(visible) shown++;
-    });
-    sec.classList.toggle("empty-hide", shown===0);
-    total += shown;
-  });
-  noRes.classList.toggle("show", total===0);
-}
-
-/* ---- copy ---- */
-let toastTimer;
-function copyCheat(btn){
-  const plat = document.body.dataset.platform;
-  const val = btn.dataset[plat];
-  const name = btn.querySelector(".c-name").textContent;
-  if((plat==="ps"||plat==="xbox") && !val){
-    showToast("Pas de combo manette pour ce véhicule", "", true);
-    return;
-  }
-  const copyStr = plat==="phone" ? val.replace(/-/g,"") : val;
-  navigator.clipboard?.writeText(copyStr).then(()=>done()).catch(()=>{
-    // fallback
-    const ta=document.createElement("textarea"); ta.value=copyStr; document.body.appendChild(ta);
-    ta.select(); try{document.execCommand("copy");}catch(e){}
-    document.body.removeChild(ta); done();
-  });
-  function done(){
-    btn.classList.add("copied");
-    if(navigator.vibrate) navigator.vibrate(12);
-    setTimeout(()=>btn.classList.remove("copied"),500);
-    showToast("Copié — "+name, plat==="phone"?val:copyStr);
-  }
-}
-function showToast(msg, code, warn){
-  const t=document.getElementById("toast");
-  t.className = warn ? "warn-toast" : "";
-  t.innerHTML = `<span>${warn?"⚠":"✓"} ${msg}</span>` + (code?`<span class="tcode">${code}</span>`:"");
-  // force reflow then show
-  void t.offsetWidth; t.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>t.classList.remove("show"), 1900);
-}
-
-/* ---- PWA service worker ---- */
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(()=>{}));
-}
+document.getElementById("ncodes").textContent=total;
+document.getElementById("ngames").textContent=HUB.length;
 </script>
 </body>
 </html>
