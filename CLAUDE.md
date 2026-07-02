@@ -7,11 +7,16 @@ Site de référence **mobile-first** des codes de triche de **GTA V (mode histoi
 But : consulter et copier un code en un tap depuis le téléphone. Fan-site, gratuit, hébergé sur GitHub Pages.
 Propriétaire : Gabriel (`stesouna9`).
 
-## État actuel
+## État actuel — hub multi-jeux
 - **Déployé** sur GitHub Pages : https://stesouna9.github.io/triches-gta5/ (repo `Stesouna9/triches-gta5`, branche `main`, root).
-- `index.html` : triches (36 codes). `bourse.html` : plan d'investissement bourse (assassinats Lester). Nav Triches⇄Bourse en haut des deux pages.
-- **PWA** : `manifest.json` + `sw.js` (cache hors-ligne) + icônes (`icon-192/512/180.png`, `favicon.png`). Installable sur écran d'accueil.
-- Preview local : macOS bloque l'accès Python (sandbox) à `~/Downloads` → http.server renvoie 404. Copier le site ailleurs (ex. scratchpad) pour le preview. Git/gh OK.
+- `index.html` = **hub** (choix du jeu, liste `HUB` dans le script).
+- `game.html` = **moteur générique** piloté par `data.js`, via `?g=<id>`. Gère plateformes variables par jeu (type `word` = clavier PC, `ps`/`xbox` = combos pastilles, `phone` = numéro).
+- `data.js` = `window.GAMES` : San Andreas (57), Vice City (43), GTA III (22), GTA IV (26). Chaque jeu : `platforms[]`, `cats[]`, `howto`, `warn`, `cheats[]`.
+- `gta5.html` = page GTA V autonome (moteur d'origine, non migré, 36 codes). `bourse.html` = plan bourse (GTA V). Nav Jeux/Triches/Bourse.
+- **PWA** : `manifest.json` + `sw.js` (cache v4, hors-ligne) + icônes. Installable.
+- Preview local : macOS bloque l'accès Python (sandbox) à `~/Downloads` → http.server 404. Copier le site dans le scratchpad pour le preview. Git/gh OK.
+- Pour **ajouter un jeu** : 1 entrée dans `GAMES` (data.js) + 1 carte dans `HUB` (index.html). Pour **ajouter un code** : 1 objet dans le tableau `cheats` du jeu.
+- Fiabilité données : codes clavier PC = les plus fiables (cross-vérifiés). Certaines combos PS2/Xbox dérivées par mapping, quelques `null` là où incertain. Météo VC/III : libellés PC clavier = point le moins sûr.
 
 ## Stack & contraintes
 - **Vanilla HTML/CSS/JS dans un seul fichier.** Aucun build, aucune dépendance, aucun framework.
